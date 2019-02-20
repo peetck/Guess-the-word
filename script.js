@@ -1,4 +1,4 @@
-word_listed = ["float()", "return()", "def"];
+word_listed = ["float()", "return", "def"];
 all_score = 0;
 alphabet = document.querySelector("letter");
 function main(){
