@@ -1,0 +1,40 @@
+body{
+    text-align: center;
+}
+
+header{
+    font-size: 50px;
+    margin-bottom: 2.5em;
+}
+
+.letter {
+    display: inline-block;
+    color: transparent;
+    border-bottom: 5px solid blue;
+    margin: 0 10px;
+    font-size: 50px;
+    padding: 10px;
+    transition: .5s;
+    text-transform: uppercase;
+}
+
+.letter_show {
+    display: inline-block;
+    color: black;
+    border-bottom: 5px solid blue;
+    margin: 0 10px;
+    font-size: 50px;
+    padding: 10px;
+    transition: .5s;
+    text-transform: uppercase;
+}
+
+#alpha{
+    margin: 2em auto;
+    font-size: 50px;
+}
+
+#wrong_answer{
+    margin: 2em auto;
+    font-size: 50px;
+}
