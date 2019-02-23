@@ -52,7 +52,7 @@ function select(inp){
         console.log(answer_right);
     }
     else{
-        wrong_answer.innerHTML = wrong_answer.innerHTML + "<letter>" + inp + "</letter>";
+        wrong_answer.innerHTML = wrong_answer.innerHTML + "<letter>" + inp + "</letter>" + " ";
     }
     if (answer_right >= len){
         all_score++;
