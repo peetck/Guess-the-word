@@ -49,6 +49,7 @@ letter:hover{
 #wrong_answer{
     margin: 2em auto;
     font-size: 50px;
+    color: red;
 }
 
 #score{
@@ -57,5 +58,10 @@ letter:hover{
 }
 
 #done{
-    color:red;
+    color:gray;
+}
+
+#right{
+    margin: 2em auto;
+    font-size: 50px;
 }

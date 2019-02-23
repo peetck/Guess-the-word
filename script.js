@@ -1,7 +1,7 @@
 word_listed = ["float()", "return", "def"];
 all_score = 0;
-alphabet = document.querySelector("letter");
 function main(){
+    temp = letter_body.innerHTML;
     answer_right = 0;
     random = Math.random() * 3;
     word = word_listed[Math.floor(random)];
@@ -44,13 +44,34 @@ function select(inp){
             inner_out += letter[i + 2];
         }
         letter_body.innerHTML = inner_out;
-        answer_right++;
+        for (i = 0; i < len; i++){
+            if (word_only[i] == inp){
+                answer_right++;
+            }
+        }
         console.log(answer_right);
+    }
+    else{
+        wrong_answer.innerHTML = wrong_answer.innerHTML + "<letter>" + inp + "</letter>";
     }
     if (answer_right >= len){
         all_score++;
         answer_right = 0;
         score.innerHTML = "Your score is :" + all_score;
+        right.innerHTML = '<a onclick="reset()">Next word</a>';
     }
+}
+
+function reset(){
+    letter_body.innerHTML = temp;
+    str = "";
+    alpha = "abcdefghijklmnopqrstuvwxyz";
+    for (i = 0; i < 26; i++){
+        str += "<letter onclick=\"select('" +alpha[i] + "')\" id = '" +alpha[i] + "'>" +alpha[i].toUpperCase() + "</letter>" + " ";
+    }
+    document.getElementById('alpha').innerHTML = str;
+    document.getElementById('wrong_answer').innerHTML = "";
+     document.getElementById('right').innerHTML = "";
+    main();
 }
 main();
