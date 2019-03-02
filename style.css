@@ -3,19 +3,44 @@
 body{
     text-align: center;
     font-family: 'Londrina Solid', cursive;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+}
+
+@keyframes Gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
 }
 
 header{
     font-size: 50px;
     margin-bottom: 2.5em;
+    margin-top: 0.75em;
 }
 
 letter{
     border-style: solid;
-    border-width: 3px 3px;
+    border-width: 1.5px 1.5px;
     font-size: 50px;
 }
-
+game{
+    display:block;
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    margin:2em auto;
+    background: white;
+    width:1500px;
+    height:800px;
+    position:relative;
+    border-radius:10px;
+    overflow:hidden;
+}
+.letter_body{
+    background-color:red;
+}
 letter:hover{
     color:blue;
 }
@@ -39,17 +64,18 @@ letter:hover{
     padding: 10px;
     transition: .5s;
     text-transform: uppercase;
+    animation: letteranim .3s ease;
+
+}
+@keyframes letteranim {
+  50% {
+    transform: translateY(-5px) scale(1.05);
+  }
 }
 
 #alpha{
     margin: 2em auto;
     font-size: 50px;
-}
-
-#wrong_answer{
-    margin: 2em auto;
-    font-size: 50px;
-    color: red;
 }
 
 #score{
@@ -65,3 +91,4 @@ letter:hover{
     margin: 2em auto;
     font-size: 50px;
 }
+
