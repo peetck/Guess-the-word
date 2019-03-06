@@ -39,6 +39,7 @@ function main(){
         inner_out += letter[i + 2];
     }
     letter_body.innerHTML = inner_out;
+    right.innerText = "Hint: " + "To define a function.";
 }
 function select(inp){
     document.getElementById(inp).id = "done";
