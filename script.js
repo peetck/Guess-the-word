@@ -1,4 +1,5 @@
-word_listed = ["def"];
+word_listed = ["def", "abs()"];
+word_hint = {"def": "To define a function.", "abs()": "Returns the absolute value of a number."};
 all_score = 0;
 count = 0;
 except = ""
@@ -11,14 +12,16 @@ function reset(){
         str += "<letter onclick=\"select('" +alpha[i] + "')\" id = '" +alpha[i] + "'>" +alpha[i].toUpperCase() + "</letter>" + " ";
     }
     document.getElementById('alpha').innerHTML = str;
-     document.getElementById('right').innerHTML = "";
+    document.getElementById('right').innerHTML = "";
     main();
 }
 function main(){
+    hp = 5;
+    hp_create(hp);
     temp = letter_body.innerHTML;
     answer_right = 0;
     count = 0;
-    random = Math.random() * 1;
+    random = Math.random() * 2;
     word = word_listed[Math.floor(random)];
     word_only = word.replace("(", "").replace(")", "");
     len = word_only.length;
@@ -39,7 +42,7 @@ function main(){
         inner_out += letter[i + 2];
     }
     letter_body.innerHTML = inner_out;
-    right.innerText = "Hint: " + "To define a function.";
+    right.innerText = "Hint: " + word_hint[word];
 }
 function select(inp){
     document.getElementById(inp).id = "done";
@@ -68,10 +71,17 @@ function select(inp){
         }
         console.log(answer_right);
     }
-
+    else{
+        hp--;
+        hp_create(hp);
+        if (hp <= 0){count = len;}
+    }
     if (count >= len){
         if (answer_right >= len){
             all_score++;
+        }
+        else{
+            all_score--;
         }
         answer_right = 0;
         score.innerHTML = "Your score is :" + all_score;
@@ -89,4 +99,13 @@ function select(inp){
     }
 }
 
+document.onkeydown = function(e){
+    if (count < len) select(e.key);
+};
+function hp_create(hp){
+    document.getElementsByTagName("heart")[0].innerHTML = "";
+    for (i = 0; i < hp; i++){
+         document.getElementsByTagName("heart")[0].innerHTML += "<img src='heart.gif'>";
+    }
+}
 main();

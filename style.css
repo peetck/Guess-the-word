@@ -6,6 +6,8 @@ body{
     background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
     background-size: 400% 400%;
     animation: Gradient 15s ease infinite;
+    margin: 0;
+    margin-top: 1em;
 }
 
 @keyframes Gradient {
@@ -24,16 +26,17 @@ letter{
     border-style: solid;
     border-width: 1.5px 1.5px;
     font-size: 50px;
+    padding: 5px;
 }
 game{
     display:block;
     border-style: solid;
     border-color: black;
     border-width: 5px;
-    margin:2em auto;
+    margin: auto;
     background: white;
-    width:1500px;
-    height:800px;
+    width: 70%;
+    height: 100%;
     position:relative;
     border-radius:10px;
     overflow:hidden;
@@ -80,6 +83,7 @@ letter:hover{
 
 #score{
     margin: 2em auto;
+    margin-bottom: 50px;
     font-size: 50px;
 }
 
@@ -92,3 +96,8 @@ letter:hover{
     font-size: 50px;
 }
 
+img{
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
