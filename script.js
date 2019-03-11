@@ -1,3 +1,11 @@
+word_listed = ["def", "abs()", "all()","ascii()","bool()","chr()","dict()","float()","help()","int()","len()","list()","max()","min()","ord()","print()","range()","reversed()","str()","tuple()","capitalize()","center()"];
+
+word_hint = {"def": "To define a function.", "abs()": "Returns the absolute value of a number.", "all()": "Returns True if all items in an iterable object are true.","ascii()": "Returns a readable version of an object. Replaces none-ascii characters with escape character",
+"bool()": "Returns the boolean value of the specified object","chr()": "Returns a character from the specified Unicode code.","dict()": "Returns a dictionary (Array)","float()": "Returns a floating point number","help()": "Executes the built-in help system",
+"len()":"Returns the length of an object","list()": "Returns a list","max()": " Returns the largest item in an iterable", "min()": "Returns the smallest item in an iterable","ord()":" Convert an integer representing the Unicode of the specified character",
+"print()":" Prints to the standard output device","range()":"Returns a sequence of numbers, starting from 0 and increments by 1 (by default)","reversed()":"Returns a reversed iterator","str()":"Returns a string object","tuple()":"Returns a tuple",
+"capitalize()":"Converts the first character to upper case","center()":"Returns a centered string"};
+
 all_score = 0;
 count = 0;
 except = ""
@@ -14,14 +22,13 @@ function reset(){
     main();
 }
 function main(){
-    word_listed = ["def", "abs()", "all()"];
-    word_hint = {"def": "To define a function.", "abs()": "Returns the absolute value of a number.", "all()": "Returns True if all items in an iterable object are true."};
+    
     hp = 5;
     hp_create(hp);
     temp = letter_body.innerHTML;
     answer_right = 0;
     count = 0;
-    random = Math.random() * 3;
+    random = Math.random() * 10;
     word = word_listed[Math.floor(random)];
     word_only = word.replace("(", "").replace(")", "");
     len = word_only.length;
