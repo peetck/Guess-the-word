@@ -1,6 +1,6 @@
 word_listed = ["def", "abs()", "all()","ascii()","bool()","chr()","dict()","float()","help()","int()","len()","list()","max()","min()","ord()","print()","range()","reversed()","str()","tuple()","capitalize()","center()","count()","find()","isalnum()","isalpha()","isdigit()","islower()",
 "isspace()","isupper()","lower()","replace()","rfind()","rsplit()","split()","strip()","swapcase()","title()","upper()","append()","insert()","pop()",
-"remove()","reverse()","sort()"];
+"remove()","reverse()","sort()","fromkeys()","get()","items()","keys()","update()"];
 
 word_hint = {"def": "To define a function.", "abs()": "Returns the absolute value of a number.", "all()": "Returns True if all items in an iterable object are true.","ascii()": "Returns a readable version of an object. Replaces none-ascii characters with escape character",
 "bool()": "Returns the boolean value of the specified object","chr()": "Returns a character from the specified Unicode code.","dict()": "Returns a dictionary (Array)","float()": "Returns a floating point number","help()": "Executes the built-in help system",
@@ -10,7 +10,8 @@ word_hint = {"def": "To define a function.", "abs()": "Returns the absolute valu
 "isalnum()":"Returns True if all characters in the string are alphanumeric","isalpha()":"Returns True if all characters in the string are in the alphabet","isdigit()":"Returns True if all characters in the string are digits","islower()":"Returns True if all characters in the string are lower case",
 "isspace()":"Returns True if all characters in the string are whitespaces","isupper()":"Returns True if all characters in the string are upper case","lower()":"Converts a string into lower case","replace()":"Returns a string where a specified value is replaced with a specified value","rfind()":"Searches the string for a specified value and returns the last position of where it was found",
 "rsplit()":"Splits the string at the specified separator, and returns a list","split()":"Splits the string at the specified separator, and returns a list","strip()":"Returns a trimmed version of the string","swapcase()":"Swaps cases, lower case becomes upper case and vice versa","title()":"Converts the first character of each word to upper case","upper()":"Converts a string into upper case","append()":"Adds an element at the end of the list",
-"insert()":"Adds an element at the specified position","pop()":"Removes the element at the specified position","remove()":" Removes the first item with the specified value","reverse()":"Reverses the order of the list","sort()":"Sorts the list"};
+"insert()":"Adds an element at the specified position","pop()":"Removes the element at the specified position","remove()":" Removes the first item with the specified value","reverse()":"Reverses the order of the list","sort()":"Sorts the list",
+"fromkeys()":"Returns a dictionary with the specified keys and values","get()":"Returns the value of the specified key","items()":"Returns a list containing a tuple for each key value pair","keys()":"Returns a list containing the dictionary's keys","update()":"Updates the dictionary with the specified key-value pairs"};
 
 all_score = 0;
 count = 0;
@@ -34,7 +35,7 @@ function main(){
     temp = letter_body.innerHTML;
     answer_right = 0;
     count = 0;
-    random = Math.random() * 45;
+    random = Math.random() * 50;
     word = word_listed[Math.floor(random)];
     word_only = word.replace("(", "").replace(")", "");
     len = word_only.length;
