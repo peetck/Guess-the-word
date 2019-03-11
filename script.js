@@ -1,11 +1,11 @@
-word_listed = ["def", "abs()"];
-word_hint = {"def": "To define a function.", "abs()": "Returns the absolute value of a number."};
+word_listed = ["def", "abs()", "all()"];
+word_hint = {"def": "To define a function.", "abs()": "Returns the absolute value of a number.", "all()": "Returns True if all items in an iterable object are true."};
 all_score = 0;
 count = 0;
 except = ""
 function reset(){
     letter_body.innerHTML = temp;
-    except = ""
+    except = "";
     str = "";
     alpha = "abcdefghijklmnopqrstuvwxyz";
     for (i = 0; i < 26; i++){
@@ -21,7 +21,7 @@ function main(){
     temp = letter_body.innerHTML;
     answer_right = 0;
     count = 0;
-    random = Math.random() * 2;
+    random = Math.random() * 3;
     word = word_listed[Math.floor(random)];
     word_only = word.replace("(", "").replace(")", "");
     len = word_only.length;
