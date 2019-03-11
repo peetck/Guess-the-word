@@ -1,5 +1,3 @@
-word_listed = ["def", "abs()", "all()"];
-word_hint = {"def": "To define a function.", "abs()": "Returns the absolute value of a number.", "all()": "Returns True if all items in an iterable object are true."};
 all_score = 0;
 count = 0;
 except = ""
@@ -16,6 +14,8 @@ function reset(){
     main();
 }
 function main(){
+    word_listed = ["def", "abs()", "all()"];
+    word_hint = {"def": "To define a function.", "abs()": "Returns the absolute value of a number.", "all()": "Returns True if all items in an iterable object are true."};
     hp = 5;
     hp_create(hp);
     temp = letter_body.innerHTML;
