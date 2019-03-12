@@ -153,7 +153,7 @@ function hp_create(hp){
 }
 
 function start(){
-    document.getElementsByTagName("body")[0].innerHTML = "<game>        <header>Guess the word game</header>        <div id = \"letter_body\"></div>        <div id = \"alpha\">            <letter onclick=\"select('a')\" id = 'a'>A</letter>            <letter onclick=\"select('b')\" id = 'b'>B</letter>\
+    document.getElementsByTagName("body")[0].innerHTML = "<game>        <header>Guess the word game <div id='item'><img onclick='help()' src='https://image.flaticon.com/icons/png/512/61/61671.png'></div></header>        <div id = \"letter_body\"></div>        <div id = \"alpha\">            <letter onclick=\"select('a')\" id = 'a'>A</letter>            <letter onclick=\"select('b')\" id = 'b'>B</letter>\
             <letter onclick=\"select('c')\" id = 'c'>C</letter>            <letter onclick=\"select('d')\" id = 'd'>D</letter>            <letter onclick=\"select('e')\" id = 'e'>E</letter>            <letter onclick=\"select('f')\" id = 'f'>F</letter>\
             <letter onclick=\"select('g')\" id = 'g'>G</letter>            <letter onclick=\"select('h')\" id = 'h'>H</letter>            <letter onclick=\"select('i')\" id = 'i'>I</letter>            <letter onclick=\"select('j')\" id = 'j'>J</letter>\
             <letter onclick=\"select('k')\" id = 'k'>K</letter>            <letter onclick=\"select('l')\" id = 'l'>L</letter>            <letter onclick=\"select('m')\" id = 'm'>M</letter>            <letter onclick=\"select('n')\" id = 'n'>N</letter>\
@@ -162,4 +162,9 @@ function start(){
             <letter onclick=\"select('v')\" id = 'v'>V</letter>            <letter onclick=\"select('w')\" id = 'w'>W</letter>            <letter onclick=\"select('x')\" id = 'x'>X</letter>            <letter onclick=\"select('y')\" id = 'y'>Y</letter>\
             <letter onclick=\"select('z')\" id = 'z'>Z</letter>        </div>        <div id = \"right\"></div>        <div id = \"score\">Your score is : 0</div>        <heart></heart>    </game>    <script type=\"text/javascript\" src=\"script.js\"></script>";
     main();
+}
+
+function help(){
+    help_rand = Math.floor(Math.random() * len);
+    select(word_only[help_rand]);
 }
