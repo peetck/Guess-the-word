@@ -16,7 +16,7 @@ header{
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 4.12796697626419vh;
-    margin-bottom: 3.5em;
+    margin-bottom: 2.5em;
     margin-top: 10vh;
 }
 
@@ -83,7 +83,7 @@ letter:hover{
 
 #score{
     margin: 1em auto;
-    margin-bottom: 5.159958720330238vh;
+    margin-bottom: 4.159958720330238vh;
     font-size: 4.12796697626419vh;
 }
 
@@ -91,13 +91,18 @@ letter:hover{
     color:gray;
 }
 
-.right{
+#right{
+    margin: 2em auto;
+    font-size: 3.52796697626419vh;
+}
+
+.right2{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 2.5vh;
     color: black;
     text-decoration-line: none;
 }
-.right:hover{
+.right2:hover{
     color: #f4511e;
     text-decoration-line: underline;
 
@@ -117,18 +122,19 @@ img{
 
 
 .button {
-  border-radius: 0.41279669762641896vh;
-  background-color: #f4511e;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 2.889576883384933vh;
-  padding: 2.063983488132095vh;
-  width: 20.63983488132095vh;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 0.5159958720330238vh;
-}
+    border-radius: 0.41279669762641896vh;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2.889576883384933vh;
+    padding: 2.063983488132095vh;
+    width: 20.63983488132095vh;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0.5159958720330238vh;
+    margin-bottom:0;
+  }
 
 .button span {
     cursor: pointer;
