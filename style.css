@@ -42,7 +42,7 @@ game{
     background-color:red;
 }
 letter:hover{
-    color:blue;
+    color: blue;
 }
 .letter {
     display: inline-block;
