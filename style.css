@@ -17,7 +17,7 @@ body{
 }
 
 header{
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 2.5em;
     margin-top: 0.75em;
 }
@@ -25,7 +25,7 @@ header{
 letter{
     border-style: solid;
     border-width: 1.5px 1.5px;
-    font-size: 50px;
+    font-size: 40px;
     padding: 5px;
 }
 game{
@@ -52,7 +52,7 @@ letter:hover{
     color: transparent;
     border-bottom: 5px solid blue;
     margin: 0 10px;
-    font-size: 50px;
+    font-size: 40px;
     padding: 10px;
     transition: .5s;
     text-transform: uppercase;
@@ -63,7 +63,7 @@ letter:hover{
     color: blue;
     border-bottom: 5px solid blue;
     margin: 0 10px;
-    font-size: 50px;
+    font-size: 40px;
     padding: 10px;
     transition: .5s;
     text-transform: uppercase;
@@ -78,13 +78,13 @@ letter:hover{
 
 #alpha{
     margin: 2em auto;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 #score{
     margin: 2em auto;
     margin-bottom: 50px;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 #done{
@@ -93,7 +93,7 @@ letter:hover{
 
 #right{
     margin: 2em auto;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 img{
@@ -102,9 +102,6 @@ img{
     display: inline-block;
 }
 
-input{
-    font-size: 40px;
-}
 
 .button {
   border-radius: 4px;

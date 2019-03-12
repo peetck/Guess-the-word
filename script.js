@@ -3,7 +3,7 @@ word_listed = ["def", "abs()", "all()","ascii()","bool()","chr()","dict()","floa
 "remove()","reverse()","sort()","fromkeys()","get()","items()","keys()","update()"];
 
 word_hint = {"def": "To define a function.", "abs()": "Returns the absolute value of a number.", "all()": "Returns True if all items in an iterable object are true.","ascii()": "Returns a readable version of an object. Replaces none-ascii characters with escape character",
-"bool()": "Returns the boolean value of the specified object","chr()": "Returns a character from the specified Unicode code.","dict()": "Returns a dictionary (Array)","float()": "Returns a floating point number","help()": "Executes the built-in help system",
+"bool()": "Returns the boolean value of the specified object","chr()": "Returns a character from the specified Unicode code.","dict()": "Returns a dictionary (Array)","float()": "Returns a floating point number","help()": "Executes the built-in help system", "int()": "Returns an integer number",
 "len()":"Returns the length of an object","list()": "Returns a list","max()": " Returns the largest item in an iterable", "min()": "Returns the smallest item in an iterable","ord()":" Convert an integer representing the Unicode of the specified character",
 "print()":" Prints to the standard output device","range()":"Returns a sequence of numbers, starting from 0 and increments by 1 (by default)","reversed()":"Returns a reversed iterator","str()":"Returns a string object","tuple()":"Returns a tuple",
 "capitalize()":"Converts the first character to upper case","center()":"Returns a centered string","count()":"Returns the number of times a specified value occurs in a string","find()":"Searches the string for a specified value and returns the position of where it was found",
@@ -13,10 +13,18 @@ word_hint = {"def": "To define a function.", "abs()": "Returns the absolute valu
 "insert()":"Adds an element at the specified position","pop()":"Removes the element at the specified position","remove()":" Removes the first item with the specified value","reverse()":"Reverses the order of the list","sort()":"Sorts the list",
 "fromkeys()":"Returns a dictionary with the specified keys and values","get()":"Returns the value of the specified key","items()":"Returns a list containing a tuple for each key value pair","keys()":"Returns a list containing the dictionary's keys","update()":"Updates the dictionary with the specified key-value pairs"};
 
+var rand = 50;
+var fail = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/bad.mp3');
+var correct = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/goodbell.mp3");
+var guess_right = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/win.mp3");
+var guess_wrong = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/lose.mp3");
+var bg_music = new Audio("bg_music.mp3");
+can_press_enter = 0;
 all_score = 0;
 count = 0;
 except = ""
 function reset(){
+    can_press_enter = 0;
     letter_body.innerHTML = temp;
     except = "";
     str = "";
@@ -29,13 +37,13 @@ function reset(){
     main();
 }
 function main(){
-    
+    bg_music.play();
     hp = 5;
     hp_create(hp);
     temp = letter_body.innerHTML;
     answer_right = 0;
     count = 0;
-    random = Math.random() * 50;
+    random = Math.random() * rand;
     word = word_listed[Math.floor(random)];
     word_only = word.replace("(", "").replace(")", "");
     len = word_only.length;
@@ -62,6 +70,7 @@ function select(inp){
     document.getElementById(inp).id = "done";
     except += inp;
     if (word.indexOf(inp) > -1){
+        correct.play();
         for (var i = 0; i < len; i++){
             if (word_only[i] == inp){
                 letter[i] = "<word class = 'letter_show'>" + inp + "</word>";
@@ -86,20 +95,25 @@ function select(inp){
         console.log(answer_right);
     }
     else{
+        fail.play();
         hp--;
         hp_create(hp);
         if (hp <= 0){count = len;}
     }
     if (count >= len){
         if (answer_right >= len){
+            guess_right.play();
             all_score++;
+            right.innerHTML = 'You just guess: ' + word_only + ' :) <br> <h1><button class="button" onclick="reset()"><span> Next Word </span></button></h1>';
         }
         else{
+            guess_wrong.play();
             all_score--;
+            if (all_score < 0) all_score = 0;
+            right.innerHTML = 'Answer is: ' + word_only + ' :) <br> <h1><button class="button" onclick="reset()"><span> Next Word </span></button></h1>';
         }
         answer_right = 0;
-        score.innerHTML = "Your score is :" + all_score;
-        right.innerHTML = '<a onclick="reset()">Next word</a>';
+        score.innerHTML = "Your score is : " + all_score;
         str = "";
         alpha = "abcdefghijklmnopqrstuvwxyz";
         for (i = 0; i < 26; i++){
@@ -110,10 +124,19 @@ function select(inp){
             str += "<letter id = '" +alpha[i] + "'>" +alpha[i].toUpperCase() + "</letter>" + " ";
         }
         document.getElementById('alpha').innerHTML = str;
+        word_listed.splice(word_listed.indexOf(word), 1);
+        console.log(word);
+        console.log(word_listed);
+        rand--;
+        if (rand <= 0){alert("you win");}
+        can_press_enter = 1;
     }
 }
 
 document.onkeydown = function(e){
+    if (can_press_enter && e.key == "Enter"){
+        reset();
+    }
     if (count < len) select(e.key);
 };
 
@@ -132,6 +155,6 @@ function start(){
             <letter onclick=\"select('o')\" id = 'o'>O</letter>            <letter onclick=\"select('p')\" id = 'p'>P</letter>            <letter onclick=\"select('q')\" id = 'q'>Q</letter>\
             <letter onclick=\"select('r')\" id = 'r'>R</letter>            <letter onclick=\"select('s')\" id = 's'>S</letter>            <letter onclick=\"select('t')\" id = 't'>T</letter>            <letter onclick=\"select('u')\" id = 'u'>U</letter>\
             <letter onclick=\"select('v')\" id = 'v'>V</letter>            <letter onclick=\"select('w')\" id = 'w'>W</letter>            <letter onclick=\"select('x')\" id = 'x'>X</letter>            <letter onclick=\"select('y')\" id = 'y'>Y</letter>\
-            <letter onclick=\"select('z')\" id = 'z'>Z</letter>        </div>        <div id = \"right\"></div>        <div id = \"score\">Your score is :0</div>        <heart></heart>    </game>    <script type=\"text/javascript\" src=\"script.js\"></script>";
+            <letter onclick=\"select('z')\" id = 'z'>Z</letter>        </div>        <div id = \"right\"></div>        <div id = \"score\">Your score is : 0</div>        <heart></heart>    </game>    <script type=\"text/javascript\" src=\"script.js\"></script>";
     main();
 }
