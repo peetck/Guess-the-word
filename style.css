@@ -3,7 +3,7 @@
 body{
     text-align: center;
     font-family: 'Londrina Solid', cursive;
-    background-image: url(bg3.jpg);
+    background-image: url(bg.jpg);
     background-size: cover;
     margin: 0;
     margin-top: 1em;
@@ -29,8 +29,7 @@ letter{
     margin-bottom: 10px;
 }
 game{
-    background-image: url(aaa.jpg);
-    background-size: cover;
+    background-color: white;
     display:block;
     border-style: solid;
     border-color: black;
