@@ -12,7 +12,7 @@ body{
 
 
 header{
-    font-size: 40px;
+    font-size: 4.12796697626419vh;
     margin-bottom: 2.5em;
     margin-top: 0.75em;
 }
@@ -20,7 +20,7 @@ header{
 letter{
     border-style: solid;
     border-width: 1.5px 1.5px;
-    font-size: 40px;
+    font-size: 4.12796697626419vh;
     padding: 5px;
     display: inline-block;
     margin-bottom: 10px;
@@ -49,7 +49,7 @@ letter:hover{
     color: transparent;
     border-bottom: 5px solid blue;
     margin: 0 10px;
-    font-size: 40px;
+    font-size: 4.12796697626419vh;
     padding: 10px;
     transition: .5s;
     text-transform: lowercase;
@@ -60,7 +60,7 @@ letter:hover{
     color: blue;
     border-bottom: 5px solid blue;
     margin: 0 10px;
-    font-size: 40px;
+    font-size: 4.12796697626419vh;
     padding: 10px;
     transition: .5s;
     animation: letteranim .3s ease;
@@ -74,13 +74,13 @@ letter:hover{
 
 #alpha{
     margin: 2em auto;
-    font-size: 40px;
+    font-size: 4.12796697626419vh;
 }
 
 #score{
     margin: 2em auto;
     margin-bottom: 50px;
-    font-size: 40px;
+    font-size: 4.12796697626419vh;
 }
 
 #done{
@@ -89,7 +89,7 @@ letter:hover{
 
 #right{
     margin: 2em auto;
-    font-size: 40px;
+    font-size: 4.12796697626419vh;
 }
 
 img{
