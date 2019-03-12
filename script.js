@@ -69,76 +69,78 @@ function main(){
     right.innerText = "Hint: " + word_hint[word];
 }
 function select(inp){
-    done_color = 'green';
-    except += inp;
-    if (word.indexOf(inp) > -1){
-        correct.play();
-        for (var i = 0; i < len; i++){
-            if (word_only[i] == inp){
-                letter[i] = "<word class = 'letter_show'>" + inp + "</word>";
+    if (document.getElementById(inp).id != 'done_red' && document.getElementById(inp).id != 'done_green'){
+        done_color = 'green';
+        except += inp;
+        if (word.indexOf(inp) > -1){
+            correct.play();
+            for (var i = 0; i < len; i++){
+                if (word_only[i] == inp){
+                    letter[i] = "<word class = 'letter_show'>" + inp + "</word>";
+                }
             }
-        }
-        console.log("found!!");
-        inner_out = "";
-        for (i = 0; i < len;i++){
-            inner_out += letter[i];
-        }
-        if (word.indexOf("(") > -1 && word.indexOf(")") > -1){
-            inner_out += letter[i + 1];
-            inner_out += letter[i + 2];
-        }
-        letter_body.innerHTML = inner_out;
-        for (i = 0; i < len; i++){
-            if (word_only[i] == inp){
-                answer_right++;
-                count++;
+            console.log("found!!");
+            inner_out = "";
+            for (i = 0; i < len;i++){
+                inner_out += letter[i];
             }
-        }
-        console.log(answer_right);
-    }
-    else{
-        fail.play();
-        hp--;
-        hp_create(hp);
-        if (hp <= 0){count = len;}
-        done_color = 'red';
-    }
-    document.getElementById(inp).id = "done" + "_" + done_color;
-    if (count >= len){
-        if (answer_right >= len){
-            guess_right.play();
-            all_score++;
-            right.innerHTML = 'You just guess: ' + word + '<br> <h1><button class="button" onclick="reset()"><span> Next Word </span></button></h1>';
+            if (word.indexOf("(") > -1 && word.indexOf(")") > -1){
+                inner_out += letter[i + 1];
+                inner_out += letter[i + 2];
+            }
+            letter_body.innerHTML = inner_out;
+            for (i = 0; i < len; i++){
+                if (word_only[i] == inp){
+                    answer_right++;
+                    count++;
+                }
+            }
+            console.log(answer_right);
         }
         else{
-            guess_wrong.play();
-            all_score--;
-            if (all_score < 0) all_score = 0;
-            right.innerHTML = 'Answer is: ' + word + '<br> <h1><button class="button" onclick="reset()"><span> Next Word </span></button></h1>';
+            fail.play();
+            hp--;
+            hp_create(hp);
+            if (hp <= 0){count = len;}
+            done_color = 'red';
         }
-        answer_right = 0;
-        score.innerHTML = "Your score is : " + all_score;
-        str = "";
-        alpha = "abcdefghijklmnopqrstuvwxyz";
-        for (i = 0; i < 26; i++){
-            if (except.indexOf(alpha[i]) > -1){
-                str += "<letter id = 'done'>" + alpha[i].toUpperCase() + "</letter>" + " ";
-                continue;
+        document.getElementById(inp).id = "done" + "_" + done_color;
+        if (count >= len){
+            if (answer_right >= len){
+                guess_right.play();
+                all_score++;
+                right.innerHTML = 'You just guess: ' + word + '<br> <h1><button class="button" onclick="reset()"><span> Next Word </span></button></h1>';
             }
-            str += "<letter id = '" +alpha[i] + "'>" +alpha[i].toUpperCase() + "</letter>" + " ";
+            else{
+                guess_wrong.play();
+                all_score--;
+                if (all_score < 0) all_score = 0;
+                right.innerHTML = 'Answer is: ' + word + '<br> <h1><button class="button" onclick="reset()"><span> Next Word </span></button></h1>';
+            }
+            answer_right = 0;
+            score.innerHTML = "Your score is : " + all_score;
+            str = "";
+            alpha = "abcdefghijklmnopqrstuvwxyz";
+            for (i = 0; i < 26; i++){
+                if (except.indexOf(alpha[i]) > -1){
+                    str += "<letter id = 'done_'" + done_color + ">" + alpha[i].toUpperCase() + "</letter>" + " ";
+                    continue;
+                }
+                str += "<letter id = '" +alpha[i] + "'>" +alpha[i].toUpperCase() + "</letter>" + " ";
+            }
+            document.getElementById('alpha').innerHTML = str;
+            word_listed.splice(word_listed.indexOf(word), 1);
+            console.log(word);
+            console.log(word_listed);
+            rand--;
+            if (rand <= 0){
+                right.innerHTML = "Out of word";
+                document.getElementById('alpha').innerHTML = "";
+                letter_body.innerHTML = "";
+                hp_create(0);
+            }
+            can_press_enter = 1;
         }
-        document.getElementById('alpha').innerHTML = str;
-        word_listed.splice(word_listed.indexOf(word), 1);
-        console.log(word);
-        console.log(word_listed);
-        rand--;
-        if (rand <= 0){
-            right.innerHTML = "Out of word";
-            document.getElementById('alpha').innerHTML = "";
-            letter_body.innerHTML = "";
-            hp_create(0);
-        }
-        can_press_enter = 1;
     }
 }
 
@@ -146,7 +148,7 @@ document.onkeydown = function(e){
     if (can_press_enter && e.key == "Enter"){
         reset();
     }
-    if (count < len) select(e.key);
+    if (count < len && document.getElementById(e.key).id != 'done_red' && document.getElementById(e.key).id != 'done_green') select(e.key);
 };
 
 function hp_create(hp){
