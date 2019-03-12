@@ -3,18 +3,13 @@
 body{
     text-align: center;
     font-family: 'Londrina Solid', cursive;
-    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-    background-size: 400% 400%;
-    animation: Gradient 15s ease infinite;
+    background-image: url("bg.jpeg");
+    background-size: cover;
+    background-attachment: fixed;
     margin: 0;
     margin-top: 1em;
 }
 
-@keyframes Gradient {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-}
 
 header{
     font-size: 40px;
