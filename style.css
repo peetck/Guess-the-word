@@ -148,3 +148,11 @@ img{
     margin:0;
     margin-top: .5em;
 }
+
+header img{
+    transition: .1s;
+}
+header img:hover{
+    width: 5.759958720330238vh;
+    height: 5.759958720330238vh;
+}
