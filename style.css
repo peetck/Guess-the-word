@@ -87,8 +87,12 @@ letter:hover{
     font-size: 4.12796697626419vh;
 }
 
-#done{
-    color:gray;
+#done_red{
+    color:red;
+}
+
+#done_green{
+    color:blue;
 }
 
 #right{
@@ -111,7 +115,7 @@ letter:hover{
     font-size: 3.5vh;
     margin-top: 32vh;
     margin-bottom: 3vh;
-    
+
 }
 
 img{

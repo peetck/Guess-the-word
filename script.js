@@ -69,7 +69,7 @@ function main(){
     right.innerText = "Hint: " + word_hint[word];
 }
 function select(inp){
-    document.getElementById(inp).id = "done";
+    done_color = 'green';
     except += inp;
     if (word.indexOf(inp) > -1){
         correct.play();
@@ -101,7 +101,9 @@ function select(inp){
         hp--;
         hp_create(hp);
         if (hp <= 0){count = len;}
+        done_color = 'red';
     }
+    document.getElementById(inp).id = "done" + "_" + done_color;
     if (count >= len){
         if (answer_right >= len){
             guess_right.play();
