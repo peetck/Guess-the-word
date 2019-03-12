@@ -69,8 +69,8 @@ function main(){
     right.innerText = "Hint: " + word_hint[word];
 }
 function select(inp){
-    if (document.getElementById(inp).id != 'done_red' && document.getElementById(inp).id != 'done_green'){
-        done_color = 'green';
+    if (document.getElementById(inp).id != 'done_red' && document.getElementById(inp).id != 'done_blue'){
+        done_color = 'blue';
         except += inp;
         if (word.indexOf(inp) > -1){
             correct.play();
@@ -148,7 +148,7 @@ document.onkeydown = function(e){
     if (can_press_enter && e.key == "Enter"){
         reset();
     }
-    if (count < len && document.getElementById(e.key).id != 'done_red' && document.getElementById(e.key).id != 'done_green') select(e.key);
+    if (count < len && document.getElementById(e.key).id != 'done_red' && document.getElementById(e.key).id != 'done_blue') select(e.key);
 };
 
 function hp_create(hp){
