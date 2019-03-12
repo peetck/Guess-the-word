@@ -128,7 +128,12 @@ function select(inp){
         console.log(word);
         console.log(word_listed);
         rand--;
-        if (rand <= 0){alert("you win");}
+        if (rand <= 0){
+            right.innerHTML = "Out of word";
+            document.getElementById('alpha').innerHTML = "";
+            letter_body.innerHTML = "";
+            hp_create(0);
+        }
         can_press_enter = 1;
     }
 }
