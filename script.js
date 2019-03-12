@@ -22,8 +22,10 @@ var bg_music = new Audio("bg_music.mp3");
 can_press_enter = 0;
 all_score = 0;
 count = 0;
-except = ""
+except = "";
+help_count = 0;
 function reset(){
+    help_count = 0;
     can_press_enter = 0;
     letter_body.innerHTML = temp;
     except = "";
@@ -165,6 +167,14 @@ function start(){
 }
 
 function help(){
-    help_rand = Math.floor(Math.random() * len);
-    select(word_only[help_rand]);
+    if (count < len){
+        try{
+            select(word_only[help_count]);
+            help_count++;
+        }
+        catch(err){
+            help_count++;
+            help();
+        }
+    }
 }
