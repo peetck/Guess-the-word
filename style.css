@@ -173,3 +173,8 @@ header img:hover{
     width: 5.759958720330238vh;
     height: 5.759958720330238vh;
 }
+.button:hover {
+    opacity: 0.9;
+    transform: translateY(-5px);
+    transition: 1s;
+}
