@@ -3,7 +3,8 @@
 body{
     text-align: center;
     font-family: 'Londrina Solid', cursive;
-    background-image: url(bg.gif);
+    background-image: url(bg3.jpg);
+    background-size: cover;
     margin: 0;
     margin-top: 1em;
     position: fixed;
@@ -12,9 +13,11 @@ body{
 
 
 header{
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 4.12796697626419vh;
-    margin-bottom: 2.5em;
-    margin-top: 0.75em;
+    margin-bottom: 3.5em;
+    margin-top: 10vh;
 }
 
 letter{
@@ -26,16 +29,17 @@ letter{
     margin-bottom: 10px;
 }
 game{
+    background-image: url(aaa.jpg);
+    background-size: cover;
     display:block;
     border-style: solid;
     border-color: black;
     border-width: 5px;
     margin: auto;
-    background: white;
-    width: 90%;
+    width: 80%;
     height: 90%;
     position:relative;
-    border-radius:10px;
+    border-radius:30px;
     overflow:hidden;
 }
 .letter_body{
@@ -78,7 +82,7 @@ letter:hover{
 }
 
 #score{
-    margin: 2em auto;
+    margin: 1em auto;
     margin-bottom: 5.159958720330238vh;
     font-size: 4.12796697626419vh;
 }
@@ -87,9 +91,22 @@ letter:hover{
     color:gray;
 }
 
-#right{
-    margin: 2em auto;
-    font-size: 4.12796697626419vh;
+.right{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2.5vh;
+    color: black;
+    text-decoration-line: none;
+}
+.right:hover{
+    color: #f4511e;
+    text-decoration-line: underline;
+
+}
+.thanks{
+    font-size: 3.5vh;
+    margin-top: 32vh;
+    margin-bottom: 3vh;
+    
 }
 
 img{
