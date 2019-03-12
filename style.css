@@ -79,7 +79,7 @@ letter:hover{
 
 #score{
     margin: 2em auto;
-    margin-bottom: 50px;
+    margin-bottom: 5.159958720330238vh;
     font-size: 4.12796697626419vh;
 }
 
@@ -93,24 +93,24 @@ letter:hover{
 }
 
 img{
-    width: 50px;
-    height: 50px;
+    width: 5.159958720330238vh;
+    height: 5.159958720330238vh;
     display: inline-block;
 }
 
 
 .button {
-  border-radius: 4px;
+  border-radius: 0.41279669762641896vh;
   background-color: #f4511e;
   border: none;
   color: #FFFFFF;
   text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 200px;
+  font-size: 2.889576883384933vh;
+  padding: 2.063983488132095vh;
+  width: 20.63983488132095vh;
   transition: all 0.5s;
   cursor: pointer;
-  margin: 5px;
+  margin: 0.5159958720330238vh;
 }
 
 .button span {
@@ -125,12 +125,12 @@ img{
     position: absolute;
     opacity: 0;
     top: 0;
-    right: -20px;
+    right: -2.063983488132095vh;
     transition: 0.5s;
 }
 
 .button:hover span {
-    padding-right: 25px;
+    padding-right: 2.579979360165119vh;
 }
 
 .button:hover span:after {
