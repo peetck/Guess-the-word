@@ -104,13 +104,13 @@ function select(inp){
         if (answer_right >= len){
             guess_right.play();
             all_score++;
-            right.innerHTML = 'You just guess: ' + word_only + ' :) <br> <h1><button class="button" onclick="reset()"><span> Next Word </span></button></h1>';
+            right.innerHTML = 'You just guess: ' + word + '<br> <h1><button class="button" onclick="reset()"><span> Next Word </span></button></h1>';
         }
         else{
             guess_wrong.play();
             all_score--;
             if (all_score < 0) all_score = 0;
-            right.innerHTML = 'Answer is: ' + word_only + ' :) <br> <h1><button class="button" onclick="reset()"><span> Next Word </span></button></h1>';
+            right.innerHTML = 'Answer is: ' + word + '<br> <h1><button class="button" onclick="reset()"><span> Next Word </span></button></h1>';
         }
         answer_right = 0;
         score.innerHTML = "Your score is : " + all_score;

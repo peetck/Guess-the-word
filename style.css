@@ -3,11 +3,11 @@
 body{
     text-align: center;
     font-family: 'Londrina Solid', cursive;
-    background-image: url("bg.jpeg");
-    background-size: cover;
-    background-attachment: fixed;
+    background-color: black;
     margin: 0;
     margin-top: 1em;
+    position: fixed;
+    top: 0;left:0;right:0;bottom:0;
 }
 
 
@@ -22,6 +22,8 @@ letter{
     border-width: 1.5px 1.5px;
     font-size: 40px;
     padding: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 game{
     display:block;
@@ -30,8 +32,8 @@ game{
     border-width: 5px;
     margin: auto;
     background: white;
-    width: 70%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     position:relative;
     border-radius:10px;
     overflow:hidden;
@@ -50,7 +52,7 @@ letter:hover{
     font-size: 40px;
     padding: 10px;
     transition: .5s;
-    text-transform: uppercase;
+    text-transform: lowercase;
 }
 
 .letter_show {
@@ -61,9 +63,8 @@ letter:hover{
     font-size: 40px;
     padding: 10px;
     transition: .5s;
-    text-transform: uppercase;
     animation: letteranim .3s ease;
-
+    text-transform: lowercase;
 }
 @keyframes letteranim {
   50% {
