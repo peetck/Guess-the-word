@@ -203,3 +203,28 @@ function help(){
         }
     }
 }
+function howto(){
+     document.getElementsByTagName("body")[0].innerHTML = "<game><header>HOW TO PLAY ?</header> <sr1 >1. กดเลือกตัวอักษรจากบนหน้าจอของท่านหรือ บนคีย์บอร์ด<br></sr1><sr2>2. เมื่อท่านทายผิดหัวใจจะลดหนึ่งดวงและเมื่อหัวใจหมด<br></sr2><sr3>ก็จะแพ้ข้อนั้นและคะแนน -1 และข้ามไปข้อต่อไป<br></sr3><sr4>3. กดเครื่องหมายคำถามข้างบนขวา หรือ กด 1 เพื่อเฉลย 1 ตัวอักษร</sr4><br></game>";
+    var s = document.querySelector("sr1");
+    s.style.padding= "5vh";
+    s.style.margin= "2em";
+    s.style.fontSize= "1.5em";
+    
+    var a = document.querySelector("sr2");
+    a.style.padding="5vh";
+    a.style.margin="2vh";
+    a.style.fontSize="1.5em";
+   
+    var b = document.querySelector("sr3");
+    b.style.padding="5vh";
+    b.style.margin="2vh";
+    b.style.fontSize="1.5em";
+    b.style.textAlign="left";
+    
+    var c = document.querySelector("sr4");
+    c.style.padding="5vh";
+    c.style.margin="2vh";
+    c.style.fontSize="1.5em";
+    
+    
+  } 
