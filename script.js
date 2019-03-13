@@ -1,6 +1,6 @@
 word_listed = ["def", "abs()", "all()","ascii()","bool()","chr()","dict()","float()","help()","int()","len()","list()","max()","min()","ord()","print()","range()","reversed()","str()","tuple()","capitalize()","center()","count()","find()","isalnum()","isalpha()","isdigit()","islower()",
-"isspace()","isupper()","lower()","replace()","rfind()","rsplit()","split()","strip()","swapcase()","title()","upper()","append()","insert()","pop()",
-"remove()","reverse()","sort()","fromkeys()","get()","items()","keys()","update()"];
+               "isspace()","isupper()","lower()","replace()","rfind()","rsplit()","split()","strip()","swapcase()","title()","upper()","append()","insert()","pop()",
+               "remove()","reverse()","sort()","fromkeys()","get()","items()","keys()","update()"];
 
 word_hint = {"def": "To define a function.", "abs()": "Returns the absolute value of a number.", "all()": "Returns True if all items in an iterable object are true.","ascii()": "Returns a readable version of an object. Replaces none-ascii characters with escape character",
 "bool()": "Returns the boolean value of the specified object","chr()": "Returns a character from the specified Unicode code.","dict()": "Returns a dictionary (Array)","float()": "Returns a floating point number","help()": "Executes the built-in help system", "int()": "Returns an integer number",
@@ -13,23 +13,23 @@ word_hint = {"def": "To define a function.", "abs()": "Returns the absolute valu
 "insert()":"Adds an element at the specified position","pop()":"Removes the element at the specified position","remove()":" Removes the first item with the specified value","reverse()":"Reverses the order of the list","sort()":"Sorts the list",
 "fromkeys()":"Returns a dictionary with the specified keys and values","get()":"Returns the value of the specified key","items()":"Returns a list containing a tuple for each key value pair","keys()":"Returns a list containing the dictionary's keys","update()":"Updates the dictionary with the specified key-value pairs"};
 
-var rand = 50;
+var rand = word_listed.length;
 var fail = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/bad.mp3');
 var correct = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/goodbell.mp3");
 var guess_right = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/win.mp3");
 var guess_wrong = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/lose.mp3");
 var bg_music = new Audio("bg_music.mp3");
-can_press_enter = 0;
-all_score = 0;
-count = 0;
-except = "";
-help_count = 0;
+var can_press_enter = 0;
+var all_score = 0;
+var count = 0;
+var except = "";
+var help_count = 0;
 function reset(){
-    help_count = 0;
     can_press_enter = 0;
     letter_body.innerHTML = temp;
     except = "";
     str = "";
+    help_count = 0;
     alpha = "abcdefghijklmnopqrstuvwxyz";
     for (i = 0; i < 26; i++){
         str += "<letter onclick=\"select('" +alpha[i] + "')\" id = '" +alpha[i] + "'>" +alpha[i].toUpperCase() + "</letter>" + " ";
@@ -106,6 +106,7 @@ function select(inp){
         }
         document.getElementById(inp).id = "done" + "_" + done_color;
         if (count >= len){
+            hp_create(0);
             if (answer_right >= len){
                 guess_right.play();
                 all_score++;
@@ -134,21 +135,24 @@ function select(inp){
             console.log(word_listed);
             rand--;
             if (rand <= 0){
-                right.innerHTML = "Out of word";
+                hp_create(0);
                 document.getElementById('alpha').innerHTML = "";
                 letter_body.innerHTML = "";
-                hp_create(0);
+                right.innerHTML = 'Answer is: ' + word + '<br>' + 'You just guess all of the word' + '<br>' + '<h1><button class="button" onclick="start()"><span> Play again </span></button></h1>';
             }
+            console.log(rand);
             can_press_enter = 1;
         }
     }
 }
 
 document.onkeydown = function(e){
+    console.log(e.key);
     if (can_press_enter && e.key == "Enter"){
         reset();
     }
-    if (count < len && document.getElementById(e.key).id != 'done_red' && document.getElementById(e.key).id != 'done_blue') select(e.key);
+    else if (e.key == '1'){help();}
+    else if (count < len && document.getElementById(e.key).id != 'done_red' && document.getElementById(e.key).id != 'done_blue') select(e.key);
 };
 
 function hp_create(hp){
@@ -159,6 +163,15 @@ function hp_create(hp){
 }
 
 function start(){
+    can_press_enter = 0;
+    all_score = 0;
+    count = 0;
+    except = "";
+    help_count = 0;
+    word_listed = ["def", "abs()", "all()","ascii()","bool()","chr()","dict()","float()","help()","int()","len()","list()","max()","min()","ord()","print()","range()","reversed()","str()","tuple()","capitalize()","center()","count()","find()","isalnum()","isalpha()","isdigit()","islower()",
+                    "isspace()","isupper()","lower()","replace()","rfind()","rsplit()","split()","strip()","swapcase()","title()","upper()","append()","insert()","pop()",
+                    "remove()","reverse()","sort()","fromkeys()","get()","items()","keys()","update()"];
+    rand = word_listed.length;
     document.getElementsByTagName("body")[0].innerHTML = "<game>        <header>Guess the word game <div id='item'><img onclick='help()' src='https://image.flaticon.com/icons/png/512/61/61671.png'></div></header>        <div id = \"letter_body\"></div>        <div id = \"alpha\">            <letter onclick=\"select('a')\" id = 'a'>A</letter>            <letter onclick=\"select('b')\" id = 'b'>B</letter>\
             <letter onclick=\"select('c')\" id = 'c'>C</letter>            <letter onclick=\"select('d')\" id = 'd'>D</letter>            <letter onclick=\"select('e')\" id = 'e'>E</letter>            <letter onclick=\"select('f')\" id = 'f'>F</letter>\
             <letter onclick=\"select('g')\" id = 'g'>G</letter>            <letter onclick=\"select('h')\" id = 'h'>H</letter>            <letter onclick=\"select('i')\" id = 'i'>I</letter>            <letter onclick=\"select('j')\" id = 'j'>J</letter>\
