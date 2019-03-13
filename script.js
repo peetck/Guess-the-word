@@ -73,6 +73,8 @@ function select(inp){
         done_color = 'blue';
         except += inp;
         if (word.indexOf(inp) > -1){
+            correct.pause();
+            correct.currentTime = 0;
             correct.play();
             for (var i = 0; i < len; i++){
                 if (word_only[i] == inp){
@@ -98,6 +100,8 @@ function select(inp){
             console.log(answer_right);
         }
         else{
+            fail.pause();
+            fail.currentTime = 0;
             fail.play();
             hp--;
             hp_create(hp);
@@ -108,11 +112,15 @@ function select(inp){
         if (count >= len){
             hp_create(0);
             if (answer_right >= len){
+                guess_right.pause();
+                guess_right.currentTime = 0;
                 guess_right.play();
                 all_score++;
                 right.innerHTML = 'You just guess: ' + word + '<br> <h1><button class="button" onclick="reset()"><span> Next Word </span></button></h1>';
             }
             else{
+                guess_wrong.pause();
+                guess_wrong.currentTime = 0;
                 guess_wrong.play();
                 all_score--;
                 if (all_score < 0) all_score = 0;
