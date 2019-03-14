@@ -245,3 +245,30 @@ header img:hover{
     transform: translateY(-5px);
     transition: 1s;
 }
+label{
+    font-size: 3.5vh;
+}
+input[type="text"]{
+    border-radius: 0.5em;
+    border: none;
+    background-color: rgb(235, 194, 194);
+    color: black;
+    margin: 1.5vh;
+    padding: 1% 2%;
+    font-family: 'Londrina Solid', cursive;
+    font-size: 2.8vh;
+}
+input[type="text"]:focus{
+    animation: circle 1s forwards linear;
+}
+@keyframes circle{
+    0%{
+        background-color: rgb(235, 194, 194);;
+    }
+    50%{
+        background-color: yellowgreen;
+    }
+    100%{
+        background-color: lightseagreen;
+    }
+}
