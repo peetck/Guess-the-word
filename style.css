@@ -10,7 +10,14 @@ body{
     position: fixed;
     top: 0;left:0;right:0;bottom:0;
 }
-
+div.how_div{
+    text-align: left;
+    margin-left: 20%;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    font-size: 2.5vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 .how_head{
     font-size: 3.5vh;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -26,7 +33,7 @@ header{
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 4.12796697626419vh;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     margin-top: 10vh;
 }
 
@@ -124,7 +131,7 @@ letter:hover{
     font-size: 3.5vh;
     margin-top: 0;
     margin-bottom: 3vh;
-
+    margin-top: 12%;
 }
 
 img{
@@ -147,6 +154,23 @@ img{
     cursor: pointer;
     margin: 0.5159958720330238vh;
     margin-bottom:0;
+    margin-top: 5%;
+  }
+
+.button_back{
+    border-radius: 0.41279669762641896vh;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2.889576883384933vh;
+    padding: 2.063983488132095vh;
+    width: 20.63983488132095vh;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0.5159958720330238vh;
+    margin-bottom:0;
+    margin-top: 20%;
   }
 
 .button span {
@@ -170,6 +194,30 @@ img{
 }
 
 .button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.button_back span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button_back span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -2.063983488132095vh;
+    transition: 0.5s;
+}
+
+.button_back:hover span {
+    padding-right: 2.579979360165119vh;
+}
+
+.button_back:hover span:after {
     opacity: 1;
     right: 0;
 }
