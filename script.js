@@ -180,7 +180,7 @@ function start(){
                     "isspace()","isupper()","lower()","replace()","rfind()","rsplit()","split()","strip()","swapcase()","title()","upper()","append()","insert()","pop()",
                     "remove()","reverse()","sort()","fromkeys()","get()","items()","keys()","update()"];
     rand = word_listed.length;
-    document.getElementsByTagName("body")[0].innerHTML = "<game>        <header>Guess the word game <div id='item'><img onclick='help()' src='https://image.flaticon.com/icons/png/512/61/61671.png'></div></header>        <div id = \"letter_body\"></div>        <div id = \"alpha\">            <letter onclick=\"select('a')\" id = 'a'>A</letter>            <letter onclick=\"select('b')\" id = 'b'>B</letter>\
+    document.getElementsByTagName("body")[0].innerHTML = "<game>        <header>Guess the word game <div class='how_div' id='item'><img onclick='help()' src='https://image.flaticon.com/icons/png/512/61/61671.png'></div></header>        <div id = \"letter_body\"></div>        <div id = \"alpha\">            <letter onclick=\"select('a')\" id = 'a'>A</letter>            <letter onclick=\"select('b')\" id = 'b'>B</letter>\
             <letter onclick=\"select('c')\" id = 'c'>C</letter>            <letter onclick=\"select('d')\" id = 'd'>D</letter>            <letter onclick=\"select('e')\" id = 'e'>E</letter>            <letter onclick=\"select('f')\" id = 'f'>F</letter>\
             <letter onclick=\"select('g')\" id = 'g'>G</letter>            <letter onclick=\"select('h')\" id = 'h'>H</letter>            <letter onclick=\"select('i')\" id = 'i'>I</letter>            <letter onclick=\"select('j')\" id = 'j'>J</letter>\
             <letter onclick=\"select('k')\" id = 'k'>K</letter>            <letter onclick=\"select('l')\" id = 'l'>L</letter>            <letter onclick=\"select('m')\" id = 'm'>M</letter>            <letter onclick=\"select('n')\" id = 'n'>N</letter>\
@@ -204,27 +204,10 @@ function help(){
     }
 }
 function howto(){
-     document.getElementsByTagName("body")[0].innerHTML = "<game><header>HOW TO PLAY ?</header> <sr1 >1. กดเลือกตัวอักษรจากบนหน้าจอของท่านหรือ บนคีย์บอร์ด<br></sr1><sr2>2. เมื่อท่านทายผิดหัวใจจะลดหนึ่งดวงและเมื่อหัวใจหมด<br></sr2><sr3>ก็จะแพ้ข้อนั้นและคะแนน -1 และข้ามไปข้อต่อไป<br></sr3><sr4>3. กดเครื่องหมายคำถามข้างบนขวา หรือ กด 1 เพื่อเฉลย 1 ตัวอักษร</sr4><br></game>";
-    var s = document.querySelector("sr1");
-    s.style.padding= "5vh";
-    s.style.margin= "2em";
-    s.style.fontSize= "1.5em";
-    
-    var a = document.querySelector("sr2");
-    a.style.padding="5vh";
-    a.style.margin="2vh";
-    a.style.fontSize="1.5em";
-   
-    var b = document.querySelector("sr3");
-    b.style.padding="5vh";
-    b.style.margin="2vh";
-    b.style.fontSize="1.5em";
-    b.style.textAlign="left";
-    
-    var c = document.querySelector("sr4");
-    c.style.padding="5vh";
-    c.style.margin="2vh";
-    c.style.fontSize="1.5em";
-    
-    
-  } 
+     document.getElementsByTagName("body")[0].innerHTML = "<game><header>HOW TO PLAY ?</header> <div class='how_div' >1. กดเลือกตัวอักษรจากบนหน้าจอของท่านหรือ บนคีย์บอร์ด</div><div class='how_div'>2. เมื่อท่านทายผิดหัวใจจะลดหนึ่งดวงและเมื่อหัวใจหมด ก็จะแพ้ข้อนั้นและคะแนน -1 และข้ามไปข้อต่อไป</div><div class='how_div'>3. กดเครื่องหมายคำถามข้างบนขวา หรือ กด 1 เพื่อเฉลย 1 ตัวอักษร</div>\
+     <button class=\"button_back\" onclick=\"menu()\"><span>Back </span></button></game>";
+}
+var first_menu = document.getElementsByTagName("body")[0].innerHTML;
+function menu(){
+    document.getElementsByTagName("body")[0].innerHTML = first_menu;
+}
