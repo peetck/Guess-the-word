@@ -16,11 +16,11 @@ word_hint = {"def": "To define a function.", "abs()": "Returns the absolute valu
 "and": "A logical operator", "or": "A logical operator", "not": "A logical operator", "for": "To create a for loop", "break": "To break out of a loop", "while": "To create a while loop", "return": "To exit a function and return a value"};
 
 var rand = word_listed.length;
-var fail = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/bad.mp3');
-var correct = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/goodbell.mp3");
-var guess_right = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/win.mp3");
-var guess_wrong = new Audio("https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/lose.mp3");
-var bg_music = new Audio("bg_music.mp3");
+var fail = new Audio('audio/fail.mp3');
+var correct = new Audio("audio/correct.mp3");
+var guess_right = new Audio("audio/guess_right.mp3");
+var guess_wrong = new Audio("audio/guess_wrong.mp3");
+var bg_music = new Audio("audio/bg_music.mp3");
 var can_press_enter = 0;
 var all_score = 0;
 var count = 0;
@@ -118,7 +118,7 @@ function select(inp){
                 guess_right.currentTime = 0;
                 guess_right.play();
                 all_score++;
-                right.innerHTML = 'You just guess: ' + word + '<br> <h1><button class="button" onclick="reset()"><span> Next Word </span></button></h1>';
+                right.innerHTML = 'Awesome, You Correct!' + '<br> <h1><button class="button" onclick="reset()"><span> Next Word </span></button></h1>';
             }
             else{
                 guess_wrong.pause();
@@ -126,7 +126,7 @@ function select(inp){
                 guess_wrong.play();
                 all_score--;
                 if (all_score < 0) all_score = 0;
-                right.innerHTML = 'Answer is: ' + word + '<br> <h1><button class="button" onclick="reset()"><span> Next Word </span></button></h1>';
+                right.innerHTML = 'You Lost.. The word was: ' + word + '<br> <h1><button class="button" onclick="reset()"><span> Next Word </span></button></h1>';
             }
             answer_right = 0;
             score.innerHTML = "Your score is : " + all_score;
@@ -168,7 +168,7 @@ document.onkeydown = function(e){
 function hp_create(hp){
     document.getElementsByTagName("heart")[0].innerHTML = "";
     for (i = 0; i < hp; i++){
-         document.getElementsByTagName("heart")[0].innerHTML += "<img src='heart.gif'>";
+         document.getElementsByTagName("heart")[0].innerHTML += "<img src='image/heart.gif'>";
     }
 }
 
@@ -207,7 +207,7 @@ function help(){
 }
 function howto(){
      document.getElementsByTagName("body")[0].innerHTML = "<game><header>HOW TO PLAY ?</header> <div class='how_div' >1. กดเลือกตัวอักษรจากบนหน้าจอของท่านหรือ บนคีย์บอร์ด</div><div class='how_div'>2. เมื่อท่านทายผิดหัวใจจะลดหนึ่งดวงและเมื่อหัวใจหมด ก็จะแพ้ข้อนั้นและคะแนน -1 และข้ามไปข้อต่อไป</div><div class='how_div'>3. กดเครื่องหมายคำถามข้างบนขวา หรือ กด 1 เพื่อเฉลย 1 ตัวอักษร</div>\
-     <button class=\"button_back\" onclick=\"menu()\"><span>Back </span></button></game>";
+     <button class=\"button_back\" onclick=\"menu()\"><span>ย้อนกลับ</span></button></game>";
 }
 var first_menu = document.getElementsByTagName("body")[0].innerHTML;
 function menu(){
