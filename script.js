@@ -114,6 +114,8 @@ function select(inp){
         if (count >= len){
             hp_create(0);
             if (answer_right >= len){
+                guess_wrong.pause();
+                guess_wrong.currentTime = 0;
                 guess_right.pause();
                 guess_right.currentTime = 0;
                 guess_right.play();
@@ -123,6 +125,8 @@ function select(inp){
             else{
                 guess_wrong.pause();
                 guess_wrong.currentTime = 0;
+                guess_right.pause();
+                guess_right.currentTime = 0;
                 guess_wrong.play();
                 right.innerHTML = 'You Lost.. The word was: ' + word + '<br> <h1><button class="button" onclick="reset()"><span> Next Word </span></button></h1>';
             }
