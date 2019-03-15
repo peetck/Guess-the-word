@@ -154,7 +154,7 @@ img{
     cursor: pointer;
     margin: 0.5159958720330238vh;
     margin-bottom:0;
-    margin-top: 5%;
+    margin-top: 0.5%;
   }
 
 .button_back{
@@ -246,7 +246,9 @@ header img:hover{
     transition: 1s;
 }
 label{
-    font-size: 3.5vh;
+    font-size: 3vh;
+    font-weight: lighter;
+
 }
 input[type="text"]{
     border-radius: 0.5em;
@@ -257,6 +259,8 @@ input[type="text"]{
     padding: 1% 2%;
     font-family: 'Londrina Solid', cursive;
     font-size: 2.8vh;
+    margin-top: -1vh;
+
 }
 input[type="text"]:focus{
     animation: circle 1s forwards linear;
