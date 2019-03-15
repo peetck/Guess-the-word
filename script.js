@@ -1,6 +1,7 @@
 word_listed = ["def", "abs()", "all()","ascii()","bool()","chr()","dict()","float()","help()","int()","len()","list()","max()","min()","ord()","print()","range()","reversed()","str()","tuple()","capitalize()","center()","count()","find()","isalnum()","isalpha()","isdigit()","islower()",
                "isspace()","isupper()","lower()","replace()","rfind()","rsplit()","split()","strip()","swapcase()","title()","upper()","append()","insert()","pop()",
-               "remove()","reverse()","sort()","fromkeys()","get()","items()","keys()","update()"];
+               "remove()","reverse()","sort()","fromkeys()","get()","items()","keys()","update()", "and", "or", "not", "for", "break", "while", "return"];
+
 
 word_hint = {"def": "To define a function.", "abs()": "Returns the absolute value of a number.", "all()": "Returns True if all items in an iterable object are true.","ascii()": "Returns a readable version of an object. Replaces none-ascii characters with escape character",
 "bool()": "Returns the boolean value of the specified object","chr()": "Returns a character from the specified Unicode code.","dict()": "Returns a dictionary (Array)","float()": "Returns a floating point number","help()": "Executes the built-in help system", "int()": "Returns an integer number",
@@ -11,7 +12,8 @@ word_hint = {"def": "To define a function.", "abs()": "Returns the absolute valu
 "isspace()":"Returns True if all characters in the string are whitespaces","isupper()":"Returns True if all characters in the string are upper case","lower()":"Converts a string into lower case","replace()":"Returns a string where a specified value is replaced with a specified value","rfind()":"Searches the string for a specified value and returns the last position of where it was found",
 "rsplit()":"Splits the string at the specified separator, and returns a list","split()":"Splits the string at the specified separator, and returns a list","strip()":"Returns a trimmed version of the string","swapcase()":"Swaps cases, lower case becomes upper case and vice versa","title()":"Converts the first character of each word to upper case","upper()":"Converts a string into upper case","append()":"Adds an element at the end of the list",
 "insert()":"Adds an element at the specified position","pop()":"Removes the element at the specified position","remove()":" Removes the first item with the specified value","reverse()":"Reverses the order of the list","sort()":"Sorts the list",
-"fromkeys()":"Returns a dictionary with the specified keys and values","get()":"Returns the value of the specified key","items()":"Returns a list containing a tuple for each key value pair","keys()":"Returns a list containing the dictionary's keys","update()":"Updates the dictionary with the specified key-value pairs"};
+"fromkeys()":"Returns a dictionary with the specified keys and values","get()":"Returns the value of the specified key","items()":"Returns a list containing a tuple for each key value pair","keys()":"Returns a list containing the dictionary's keys","update()":"Updates the dictionary with the specified key-value pairs",
+"and": "A logical operator", "or": "A logical operator", "not": "A logical operator", "for": "To create a for loop", "break": "To break out of a loop", "while": "To create a while loop", "return": "To exit a function and return a value"};
 
 var rand = word_listed.length;
 var fail = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/bad.mp3');
@@ -177,8 +179,8 @@ function start(){
     except = "";
     help_count = 0;
     word_listed = ["def", "abs()", "all()","ascii()","bool()","chr()","dict()","float()","help()","int()","len()","list()","max()","min()","ord()","print()","range()","reversed()","str()","tuple()","capitalize()","center()","count()","find()","isalnum()","isalpha()","isdigit()","islower()",
-                    "isspace()","isupper()","lower()","replace()","rfind()","rsplit()","split()","strip()","swapcase()","title()","upper()","append()","insert()","pop()",
-                    "remove()","reverse()","sort()","fromkeys()","get()","items()","keys()","update()"];
+               "isspace()","isupper()","lower()","replace()","rfind()","rsplit()","split()","strip()","swapcase()","title()","upper()","append()","insert()","pop()",
+               "remove()","reverse()","sort()","fromkeys()","get()","items()","keys()","update()", "and", "or", "not", "for", "break", "while", "return"];
     rand = word_listed.length;
     document.getElementsByTagName("body")[0].innerHTML = "<game>        <header>Guess the word game <div class='how_div' id='item'><img onclick='help()' src='https://image.flaticon.com/icons/png/512/61/61671.png'></div></header>        <div id = \"letter_body\"></div>        <div id = \"alpha\">            <letter onclick=\"select('a')\" id = 'a'>A</letter>            <letter onclick=\"select('b')\" id = 'b'>B</letter>\
             <letter onclick=\"select('c')\" id = 'c'>C</letter>            <letter onclick=\"select('d')\" id = 'd'>D</letter>            <letter onclick=\"select('e')\" id = 'e'>E</letter>            <letter onclick=\"select('f')\" id = 'f'>F</letter>\
