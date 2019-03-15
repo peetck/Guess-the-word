@@ -124,8 +124,6 @@ function select(inp){
                 guess_wrong.pause();
                 guess_wrong.currentTime = 0;
                 guess_wrong.play();
-                all_score--;
-                if (all_score < 0) all_score = 0;
                 right.innerHTML = 'You Lost.. The word was: ' + word + '<br> <h1><button class="button" onclick="reset()"><span> Next Word </span></button></h1>';
             }
             answer_right = 0;
@@ -206,7 +204,7 @@ function help(){
     }
 }
 function howto(){
-     document.getElementsByTagName("body")[0].innerHTML = "<game><header>HOW TO PLAY ?</header> <div class='how_div' >1. กดเลือกตัวอักษรจากบนหน้าจอของท่านหรือ บนคีย์บอร์ด</div><div class='how_div'>2. เมื่อท่านทายผิดหัวใจจะลดหนึ่งดวงและเมื่อหัวใจหมด ก็จะแพ้ข้อนั้นและคะแนน -1 และข้ามไปข้อต่อไป</div><div class='how_div'>3. กดเครื่องหมายคำถามข้างบนขวา หรือ กด 1 เพื่อเฉลย 1 ตัวอักษร</div>\
+     document.getElementsByTagName("body")[0].innerHTML = "<game><header>HOW TO PLAY ?</header> <div class='how_div' >1. คุณสามารถกดเลือกตัวอักษรจากบนหน้าจอด้วยเมาส์ของท่านหรือคีย์บอร์ด</div><div class='how_div'>2. หากทายถูกจะได้รับคะแนนหนึ่งคะแนน</div><div class='how_div'>3. หากทายตัวอักษรผิดหัวใจจะหายไปหนึ่งดวงหากหัวใจหมดจะไม่ได้คะแนนข้อนั้น</div><div class='how_div'>4. จะไม่มีการนําคําที่ให้ทายไปแล้วกลับมาให้ทายอีก(แม้ว่าจะทายผิด)</div><div class='how_div'>5. กดเครื่องหมายคำถามข้างบนขวา หรือ กด 1 เพื่อเฉลย 1 ตัวอักษร (ใช้เวลาหมดหนทางจริงๆ :X)</div>\
      <button class=\"button_back\" onclick=\"menu()\"><span>ย้อนกลับ</span></button></game>";
 }
 var first_menu = document.getElementsByTagName("body")[0].innerHTML;
