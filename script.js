@@ -27,6 +27,14 @@ var count = 0;
 var except = "";
 var help_count = 0;
 function reset(){
+    if (word_listed.length == 0){
+        console.log('zero');
+        hp_create(0);
+        document.getElementById('alpha').innerHTML = "";
+        letter_body.innerHTML = "";
+        right.innerHTML = 'You just guess all of the word' + '<br>' + '<h1><button class="button" onclick="start()"><span> Play again </span></button></h1>';
+        return 0;
+    }
     can_press_enter = 0;
     letter_body.innerHTML = temp;
     except = "";
@@ -146,12 +154,6 @@ function select(inp){
             console.log(word);
             console.log(word_listed);
             rand--;
-            if (rand <= 0){
-                hp_create(0);
-                document.getElementById('alpha').innerHTML = "";
-                letter_body.innerHTML = "";
-                right.innerHTML = 'Answer is: ' + word + '<br>' + 'You just guess all of the word' + '<br>' + '<h1><button class="button" onclick="start()"><span> Play again </span></button></h1>';
-            }
             console.log(rand);
             can_press_enter = 1;
         }
