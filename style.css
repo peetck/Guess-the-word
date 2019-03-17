@@ -3,7 +3,7 @@
 body{
     text-align: center;
     font-family: 'Londrina Solid', cursive;
-    background-image: url(image/bg_img.gif);
+    background-image: url("image/bg_img.gif");
     background-size: cover;
     margin: 0;
     margin-top: 1em;
