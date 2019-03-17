@@ -1,13 +1,14 @@
-## Guess the word game
+## Guess the word game :computer:
 * โปรเจคนี้เป็นส่วนหนึ่งของวิชา MULTIMEDIA TECHNOLOGY
 คณะเทคโนโลยีสารสนเทศ สถาบันพระจอมเกล้าเจ้าคุณทหารลาดกระบัง
 * พวกเราเขียนเกมทายคําศัพท์(คําสั่งต่างๆในภาษา python)
 * ขอบคุณข้อมูลจากเว็บ www.w3schools.com/python/python_reference.asp
-## Built With
+* สามารถเข้าเล่นได้ทาง https://peetck.github.io/Guess-the-word/
+## Built With :+1:
 * <a href="https://en.wikipedia.org/wiki/HTML" target="_blank">HTML</a> Hypertext Markup Language
 * <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank">CSS</a> Cascading Style Sheets 
 * <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JS</a> JavaScript
-## Interface
+## Interface :+1:
 <img src="image/pic1.jpg" alt="drawing" width="500"/>
 <img src="image/pic2.jpg" alt="drawing" width="500"/>
 <img src="image/pic3.jpg" alt="drawing" width="500"/>
